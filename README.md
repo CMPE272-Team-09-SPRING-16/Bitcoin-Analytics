@@ -1,4 +1,7 @@
-# AmazonFresh
+# Bitcoin Analytics
 
-AmazonFresh - Farmer's Market built as a Group Project towards the completion of CMPE273(Enterprise Distributed Systems) @ SJSU.
+Bitcoin Analytics
+Group Project  CMPE272 @ SJSU.
+
+Node Backend to display real time live data predicted by Spark.
 
