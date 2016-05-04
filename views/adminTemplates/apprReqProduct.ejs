@@ -1,0 +1,54 @@
+<div ng-show="true"> <!-- Add product notofications -->
+  <span class="admin-page-title">Approval Requests :</span><span class="admin-page-title-cat"> Product</span>
+    <div class="thumbnail" ng-repeat = "product in pendingProducts">
+      <div class="row row-margin-none">
+      <div class="col-md-2">
+        <div>
+         <img class="admin-review-img" src="../uploads/{{product.FILE_NAME}}"/>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h2 class="product-page-product-name">
+         {{product.PRODUCT_NAME}}
+        </h2>
+        <div class="product-page-ratings-img">
+            <img src="images/support_images/0-stars.png"/>
+          (0)
+        </div>
+        <div class="product-page-price">
+          <span class="price">${{product.PRICE}}</span>
+          <span class="unit-price">({{product.UNIT}})</span>
+        </div>
+        <div class="row row-margin">
+          <div class="col-md-12">
+              <h3>Product Description</h2>
+              <p>{{product.PRODUCT_DESCRIPTION}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="row">
+          <button class="btn btn-success btn-xs btn-theme btn-theme-narrow pull-right" ng-click="approveProduct(product._id)">
+            <span class="pull-left">Approve</span>
+            <span class="badge pull-right">
+              <span class="glyphicon glyphicon-ok" aria-hidden="true">
+              </span>
+            </span>
+          </button>
+        </div>
+        <div class="row">
+          <button class="btn btn-danger btn-xs btn-theme btn-theme-narrow pull-right" ng-click="rejectProduct(product._id)">
+            <span class="pull-left">Reject</span>
+            <span class="badge pull-right">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true">
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="thumbnail thumbnail-no-result"  ng-show="noResult">
+      No pending requests.
+    </div>
+  </div> <!-- FINISHED Add product notofications -->

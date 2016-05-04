@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="angularjs/indexAngular.js"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/_style.css"/>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body ng-app="indexApp" ng-controller="indexCtrl" ng-cloak>
+  <div class="container-fluid container-main">
+    <div class="row row-margin-none row-margin">
+      <div class="col-md-12">
+        <ul class="nav nav-pills nav-header">
+          <li>
+            <a href="/" class="img-logo"><img alt="BitCoin Analytics" src="images/logo.png"></a>
+          </li>
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/viewChart">Prediction Chart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row row-margin-none">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Live BitCoin Transactions</div>
+        <div class="panel-body">
+          <p>
+            Live transactions showing....
+          </p>
+        </div>
+
+        <table class="table">
+          <tr>
+            <th>Transaction ID</th>
+            <th>Timestamp</th>
+            <th>Price</th>
+            <th>Volume</th>
+          </tr>
+          <tr>
+            <td>Transaction ID</td>
+            <td>Timestamp</td>
+            <td>Price</td>
+            <td>Volume</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</body>
+
+</html>
