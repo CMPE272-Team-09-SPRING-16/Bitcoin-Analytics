@@ -39,23 +39,16 @@ app.post('/', function(req, res){
 	res.render('index', {});
 });
 
-app.get('/getAPIData',function(req, res){
-  request('http://www.google.com/', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log(body) // Show the HTML for the Google homepage.
-    }else{
-      console.log(error);
-    }
 
-  });
-});
 
 app.get('/viewChart', function(req, res){
   res.render('chart');
 });
-app.get('/fetchLiveTransaction',function(req, res){
 
+app.get('/guide', function(req, res){
+  res.render('guide');
 });
+
 
 http.listen(app.get('port'), function(){
 	console.log('BitCoin Analytics Node-Server listening on port ' + app.get('port'));

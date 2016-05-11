@@ -1,6 +1,21 @@
 var adminNgApp = angular.module("indexApp", ['ngRoute']);
 
 adminNgApp.controller('indexCtrl', function($scope,$http) {
+
+  $http({
+  method: 'GET',
+  url: 'https://api.bitcoinaverage.com/ticker/global/USD/'
+}).then(function successCallback(response) {
+    $scope.currentPrice = response.data.ask;
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+
+
+
+
+
     $scope.transactionId = "ABC";
     var bitcoin = new WebSocket('wss://ws.blockchain.info/inv');
     var myEl = angular.element( document.querySelector( '#row' ) );
@@ -14,19 +29,19 @@ adminNgApp.controller('indexCtrl', function($scope,$http) {
 
      var index = String((JSON.parse(onmsg.data)).x.out[0].tx_index);
      var timestamp = String((JSON.parse(onmsg.data)).x.time);
- 
+
      var price = (Number((JSON.parse(onmsg.data)).x.out[0].value))/100000000;
     var address = String((JSON.parse(onmsg.data)).x.out[0].addr);
 
-     myEl.prepend("<table class='table'><tr><td>"+index+"</td><td>"+timestamp+"</td><td>"+price+" BTC</td><td>"+address+"</td></tr>");     
-    
+     myEl.prepend("<table class='table'><tr><td>"+index+"</td><td>"+timestamp+"</td><td>"+price+" BTC</td><td>"+address+"</td></tr>");
+
 
            //var td = angular.element(document.querySelector('transactionId'));
            //td.prepend((JSON.parse(onmsg.data)).x.out[0].tx_index);
 
       })
-    
+
     }
 
-      
+
   });

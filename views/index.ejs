@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/_style.css"/>
 
-
+  <link rel="shortcut icon" href="images/favicon.png" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="images/favicon.png" type="image/vnd.microsoft.icon">
+  <title>BitCoin Analytics</title>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -30,22 +32,30 @@
           <li>
             <a href="/viewChart">Prediction Chart</a>
           </li>
+          <li>
+            <a href="/guide">Beginner's Guide</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
   <div class="row row-margin-none">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-3">
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">Live BitCoin Transactions</div>
+        <div class="panel-heading"><strong>Current Price (USD)</strong></div>
         <div class="panel-body">
-          <p>
-            Live transactions showing....
-          </p>
+          <h1>{{currentPrice | currency}}</h1>
         </div>
-        <table class="table"><tr><th>Transaction ID</th><th> Timestamp</th><th> Price</th><th> Address</th></table>  
+      </div>
+    </div>
+    <div class="col-md-7">
+
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><strong>Live BitCoin Transactions</strong></div>
+
+        <table class="table"><tr><th>Transaction ID</th><th> Timestamp</th><th> Price</th><th> Address</th></table>
         <div id="row" style="height: 400px;width: 100%;overflow: scroll;"></div>
       </div>
     </div>
